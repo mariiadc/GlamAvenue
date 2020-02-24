@@ -1,0 +1,28 @@
+// .box {
+//   display:center;
+// }
+
+#box {
+  padding: 30px;
+  background-color: #d9cdbf;
+  //display: flex;
+  //align-items: center;
+  text-align: center;
+  height: 130px;
+
+
+  a {
+    color: #261d12;
+    display:inline;
+    font-size:20px;
+    margin-right: 15px;
+    font-family:Montserrat;
+  }
+}
+
+.footer {
+  //position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+}
+
