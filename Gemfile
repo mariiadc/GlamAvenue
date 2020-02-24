@@ -14,6 +14,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'simple_form'
 
 # Devise gem- User sign in and login
 gem 'devise'
