@@ -1,0 +1,14 @@
+<h1>Goods#new</h1>
+<p>Find me in app/views/goods/new.html.erb</p>
+
+<%= simple_form_for [@good] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :designer %>
+
+  <%= f.submit "Add your item", class: "btn btn-primary" %>
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+<% end %>

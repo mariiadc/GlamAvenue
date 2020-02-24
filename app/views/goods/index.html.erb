@@ -1,0 +1,12 @@
+<h1>List of Goods</h1>
+
+<div class="goods">
+      <div>
+      <% @goods.each do |good|%>
+      <h2 class= ""> <%= link_to good.name, goods_path(good) %></h2>
+      <p><%= good.address %></p>
+      <p><%= good.price %></p>
+      </div>
+      <% end %>
+      </div>
+  </div>
