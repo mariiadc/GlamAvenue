@@ -1,5 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/collection/4404440/1600x900);">
-  <div class="container">
+
+  <div class="container banner-search">
+    <%= render partial: 'search' %>
+  </div>
+
+<!--   <div class="container">
 
 <form>
   <div class="search-form search-home">
@@ -18,7 +23,16 @@
         <input type="text" class="form-control" id="start_date">
       </div>
     </div>
-    <%= render partial: 'shared/search' %>
+    <= render partial: 'shared/search' %> -->
+
 </div>
-</form>
+<div class="container">
+ <!--  <h1> Text of the body</h1>
+  <div class="review">
+    <h2>Top reviewed items</h2>
+  </div> -->
+  <div class="outer-cards">
+    <%= render partial: 'cards' %>
+  </div>
 </div>
+
