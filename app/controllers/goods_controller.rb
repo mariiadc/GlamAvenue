@@ -1,4 +1,5 @@
 class GoodsController < ApplicationController
+
   def index
     @goods = Good.all
   end
@@ -8,10 +9,13 @@ class GoodsController < ApplicationController
   end
 
   def show
+    @good = Good.find(params[:id])
+    @booking = Booking.new # This is so that we can have the Booking form in the show page
   end
 
   def create
     @good = Good.new(good_params)
+    @good.user_id = session["warden.user.user.key"][0][0] # Get user_id of who is posting the item.
     @good.save
 
     redirect_to goods_path

@@ -1,0 +1,33 @@
+
+<div>
+  <!-- images layout of show page -->
+  <div class="container">
+    <i class="fas fa-shopping-bag"></i>
+  </div>
+
+
+  <div class="container d-flex">
+    <div>
+    <%= @good.name %>
+
+    <%= @good.description %>
+    </div>
+    <div class="container w-25">
+      <%= simple_form_for [@good, @booking] do |f| %>
+           <%#= f.input :url %>
+            <%#= f.input :name %>
+      <%= f.input :start_date, as: :date, start_year: Date.today.year,
+                                   start_month: Date.today.month,
+                                   start_day: Date.today.day,
+                                   order: [:day, :month, :year] %>
+      <%= f.input :end_date, as: :date, start_year: Date.today.year,
+                                   start_month: Date.today.month,
+                                   start_day: Date.today.day + 4,
+                                   order: [:day, :month, :year] %>
+      <%=f.submit class: "btn btn-danger w-100" %>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

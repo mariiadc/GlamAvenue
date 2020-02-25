@@ -3,10 +3,13 @@
 <div class="goods">
       <div>
       <% @goods.each do |good|%>
-      <h2 class= ""> <%= link_to good.name, goods_path(good) %></h2>
-      <p><%= good.address %></p>
+      <h2 class= ""> <%= link_to good.name, good_path(good) %></h2>
+      <p><%= good.location %></p>
       <p><%= good.price %></p>
       </div>
       <% end %>
       </div>
   </div>
+
+<%= link_to 'add new good', new_good_path %>
+<%= link_to 'log in', 'users/sign_in' %>
