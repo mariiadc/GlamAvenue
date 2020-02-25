@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-# skip_before_action :authenticate_user!, only: [:show, :index]
+skip_before_action :authenticate_user!, only: [:show, :index, :root]
   def index
     @goods = Good.all
     @goods = policy_scope(Good)  # .order(created_at: :desc)
