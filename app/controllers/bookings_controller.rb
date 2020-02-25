@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(good_id: params[:good_id])
+    authorize @booking
   end
 
   def show
@@ -10,24 +11,31 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @good = Good.new
     @good = Good.find(params[:good_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
+    @good = Good.find(params[:good_id])
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
 
-    @booking.good_id = Good.find(params[:good_id])
-    @booking.user_id = session["warden.user.user.key"][0][0]
+    authorize @booking
 
-    @booking.save
-
+    @booking.good_id = @good
+    if @booking.save
+      redirect_to root_path, notice: 'Your item was successfully booked.'
+    else
+      render :new
+   end
   end
 
 # this one is for listing all bookings of user? not based on reservations
   def list
-    user_session = session["warden.user.user.key"][0][0]
     @bookings = Booking.where(user_id: user_session)
+    authorize @booking
   end
 
   private

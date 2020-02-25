@@ -2,28 +2,36 @@ class GoodsController < ApplicationController
 # skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @goods = Good.all
+    @goods = policy_scope(Good)  # .order(created_at: :desc)
   end
 
   def new
     @good = Good.new
+    authorize @good
   end
 
   def show
     @good = Good.find(params[:id])
     @booking = Booking.new # This is so that we can have the Booking form in the show page
+    authorize @good
   end
 
   def create
     @good = Good.new(good_params)
-    @good.user_id = session["warden.user.user.key"][0][0] # Get user_id of who is posting the item.
-    @good.save
+    @good.user = current_user
 
-    redirect_to goods_path
+    authorize @good
 
-  end
+    if @good.save
+      redirect_to goods_path, notice: 'Your item was successfully created.'
+    else
+      render :new
+   end
+    end
+
  private
 
   def good_params
-    params.require(:good).permit(:name, :description, :category, :price, :designer, :location)
+    params.require(:good).permit(:name, :description, :category, :price, :designer, :location, :user_id)
   end
 end
