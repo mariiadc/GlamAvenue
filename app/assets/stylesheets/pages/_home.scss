@@ -1,29 +1,17 @@
 // Specific CSS for your home-page
+@import "components/searchform";
+@import "components/cards";
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 350px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.banner h1 {
-  margin: 0;
-  color: #F2E8DF;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+
+.outer-cards h5 {
+  font-family: 'Quattrocento';
   font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: #F2E8DF;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.search-home {
-    background: #ffffff;
-    border-radius: 4px;
-    width: 508px;
-    padding: 32px;
-    margin-bottom: 16px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }

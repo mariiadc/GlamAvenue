@@ -1,5 +1,5 @@
 /*** COLORS ***/
-$bg-color: #D9CDBF;
+$bg-color: #f8f9fa;
 $txt-color: #261D12;
 $icn-color: #261D12;
 
@@ -70,7 +70,7 @@ $icn-color: #261D12;
     width: 100%;
     border: none;
     box-sizing: border-box;
-    font-family: Helvetica;
+    font-family: 'Montserrat';
     font-size: 15px;
     color: inherit;
     background: transparent;
@@ -102,4 +102,15 @@ $icn-color: #261D12;
 .text-navbar {
   font-family: 'Montserrat';
   font-size: 18px;
+  color: $txt-color;
+  text-decoration: none;
+  padding: 10px;
+
+}
+
+.text-navbar:hover {
+  text-decoration: none;
+  padding: 10px;
+  color: $txt-color;
+  border-bottom: 1px solid $txt-color;
 }

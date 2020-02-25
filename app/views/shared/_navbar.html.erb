@@ -30,8 +30,9 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <a class="dropdown-item" href="#">Profile</a>
     <a class="dropdown-item" href="#">Add booking</a>
+    <a class="dropdown-item" href="#">List my bookings</a>
     <a class="dropdown-item" href="#">Create item</a>
-    <a class="dropdown-item" href="#">Sign Out</a>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
 </div>
 </div>
