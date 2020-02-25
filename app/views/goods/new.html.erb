@@ -4,10 +4,10 @@
 <%= simple_form_for [@good] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category %>
   <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.input :designer %>
+  <%= f.input :location, collection: Good::LOCATION %>
+  <%=  f.input :designer, collection: Good::DESIGNER%>
+  <%=  f.input :category, collection: Good::CATEGORY %>
 
   <%= f.submit "Add your item", class: "btn btn-primary" %>
   <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
