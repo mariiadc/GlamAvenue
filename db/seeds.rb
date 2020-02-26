@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "destroying"
+# puts "destroying"
 
-Booking.destroy_all
-Good.destroy_all
 
-puts "done"
+# Good.destroy_all
+
+# puts "done"
