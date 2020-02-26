@@ -1,5 +1,6 @@
 class GoodsController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :index, :root]
+before_action :find, only: [:show, :edit, :update, :destroy]
   def index
     @goods = Good.all
     @goods = policy_scope(Good)  # .order(created_at: :desc)
@@ -29,6 +30,18 @@ skip_before_action :authenticate_user!, only: [:show, :index, :root]
    end
   end
 
+  def edit
+  end
+
+  def update
+    @good.update(good_params)
+    redirect_to good_path(@good)
+  end
+
+  def destroy
+    @good.destroy
+    redirect_to goods_path
+  end
  private
 
   def good_params
