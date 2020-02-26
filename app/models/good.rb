@@ -2,6 +2,7 @@ class Good < ApplicationRecord
   DESIGNER = [
 "Balenciaga",
 "Bottega Veneta",
+"Burberry",
 "Celine",
 "Channel",
 "Chloé",
