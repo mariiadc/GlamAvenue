@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'index', to: 'pages#index', as: :index
   get 'profile', to: 'pages#profile', as: :profile
-  resources :goods, only:[:index, :show, :new, :create] do
+
+  resources :goods do
     resources :bookings, only: [:new, :create, :show]
   end
 

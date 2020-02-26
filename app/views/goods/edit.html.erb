@@ -1,0 +1,14 @@
+<h1>Edit good</h1>
+
+<%= simple_form_for [@good] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+  <%= f.input :location, collection: Good::LOCATION %>
+  <%=  f.input :designer, collection: Good::DESIGNER%>
+  <%=  f.input :category, collection: Good::CATEGORY %>
+
+  <%= f.submit "Add your item", class: "btn btn-primary" %>
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+<% end %>
