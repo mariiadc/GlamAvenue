@@ -2,56 +2,53 @@ body {
   $font-family-sans-serif:  $body-font;
 }
 
-.container {
+._con {
   max-width:100%;
 }
 
-.col-2, .col-4, .col-6, .col {
+._pad {
   padding:20px;
 
 }
 
 
-.filter-page {
-  // display: flex;
-  // justify-content: space-between;
-}
 
-.card {
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  text-align:center;
-  height: 300px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  justify-content: space-around;
-  font-size: 22px;
-  font-weight: bolder;
-  background-color: #F4F4F4;
-  width: 100%;
 
-  img {
-    max-width: 40%;
-  }
-}
+// .card {
+//   align-items: center;
+//   background-size: cover;
+//   background-position: center;
+//   text-align:center;
+//   height: 300px;
+//   border-radius: 1px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+//   justify-content: space-around;
+//   font-size: 22px;
+//   font-weight: bolder;
+//   background-color: #F4F4F4;
+//   width: 100%;
 
-.button-add {
-  background-color: black;
-  font-color:white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  padding:10px;
-}
+//   img {
+//     max-width: 40%;
+//   }
+// }
+
+// .button-add {
+//   background-color: black;
+//   font-color:white;
+//   border-radius: 4px;
+//   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+//   padding:10px;
+// }
 
 // .button-log {
-.menu-lateral .dropdown {
+._ml ._dd {
   text-align:center;
 
 }
 
 
-.card-item {
+._ci {
   overflow: hidden;
   background: white;
   width:48%;
@@ -59,7 +56,7 @@ body {
   border-radius:4px;
 }
 
-.card-item > img {
+._ci > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -72,7 +69,7 @@ body {
 
 
 
-.card-item .card-item-infos {
+._ci ._cii {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -80,31 +77,31 @@ body {
   position: relative;
 }
 
-button#dropdownMenuButton {
-  margin-bottom: 14px;
-  border-radius: 3px;
-  width: 80%;
-  border-color:#D9BD8B;
-  background: #D9BD8B;
-}
+// button#dropdownMenuButton {
+//   margin-bottom: 14px;
+//   border-radius: 3px;
+//   width: 80%;
+//   border-color:#D9BD8B;
+//   background: #D9BD8B;
+// }
 
-.user-login a {
-  margin-left:10px;
-}
+// .user-login a {
+//   margin-left:10px;
+// }
 
-.items-displayed {
-  text-align:center;
-  list-style-type: none;
-  background-color:white;
-  // margin:none;
-  // padding:0px;
-  margin-bottom: 14px;
-  border-radius: 3px;
-  // width: 80%;
-  // position:relative;
-}
+// .items-displayed {
+//   text-align:center;
+//   list-style-type: none;
+//   background-color:white;
+//   // margin:none;
+//   // padding:0px;
+//   margin-bottom: 14px;
+//   border-radius: 3px;
+//   // width: 80%;
+//   // position:relative;
+// }
 
-ul {
+.ul-in {
   list-style-type: none;
   text-align:center;
   margin-right: 30px;
