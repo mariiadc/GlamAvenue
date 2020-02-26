@@ -1,17 +1,14 @@
 <div class="page">
-<%= render partial: 'shared/carousel'%>
-
-
-<div class="container _title">
-  <%= @good.name %>
-</div>
-
-<div class="body">
-<div class="description">
-  <%= @good.description %>
-</div>
-<div class="container col-md-2 _dates">
-<%= render partial: 'shared/dates' %>
-</div>
-</div>
+  <%= render partial: 'shared/carousel'%>
+  <div class="container _title">
+    <%= @good.name %>
+  </div>
+  <div class="container _body mt-4">
+    <div class="description ">
+      <%= @good.description %>
+    </div>
+    <div class="container col-md-4 _dates mb-4 ">
+      <%= render partial: 'shared/dates' %>
+    </div>
+  </div>
 </div>

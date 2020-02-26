@@ -3,33 +3,29 @@ $bg-color: #f8f9fa;
 $txt-color: #261D12;
 $icn-color: #261D12;
 
-
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
 #nav-shared {
-
-   box-shadow: 0px 10px 5px -11px rgba(0,0,0,1);
+  box-shadow: 0px 10px 5px -11px rgba(0,0,0,1);
   margin: 0px auto;
-}
-.navbar-brand {
-  font-family: 'Quattrocento';
-  // font-weight: bold;
-  padding: 20px;
-  font-size: 30px;
-
-}
-#nav-shared {
   background-color: $bg-color;
 }
 
-/*** STYLES ***/
-.search {
+.nav-br-logo {
+  font-family: 'Quattrocento';
+  padding: 20px;
+  font-size: 25px;
+}
+.nav-br-logo:hover {
+  padding: 20px;
+}
+
+
+
+.right-side {
+  display: flex;
+  justify-content: space-around;
+}
+
+._nav-search {
   display: inline-block;
   position: relative;
   height: 25px;
@@ -78,11 +74,6 @@ $icn-color: #261D12;
   }
 }
 
-.right-side {
-  display: flex;
-  justify-content: space-around;
-}
-
 .dropdown-menu {
   left: -100%;
 }
@@ -96,9 +87,7 @@ $icn-color: #261D12;
 .cart {
    font-size: 35px;
 }
-// label, i {
-//   opacity: 0.5;
-// }
+
 .text-navbar {
   font-family: 'Montserrat';
   font-size: 18px;
