@@ -14,6 +14,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  # def index
+  #   true
+  # end
+
   # only the user who created the restaurant is allowed to update it
   def update?
     # user - this is the current user

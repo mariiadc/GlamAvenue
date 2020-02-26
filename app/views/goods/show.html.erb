@@ -16,11 +16,11 @@
       <%= simple_form_for [@good, @booking] do |f| %>
            <%#= f.input :url %>
             <%#= f.input :name %>
-      <%= f.input :start_date, as: :date, start_year: Date.today.year,
+      <%#= f.input :start_date, as: :date, start_year: Date.today.year,
                                    start_month: Date.today.month,
                                    start_day: Date.today.day,
                                    order: [:day, :month, :year] %>
-      <%= f.input :end_date, as: :date, start_year: Date.today.year,
+      <%#= f.input :end_date, as: :date, start_year: Date.today.year,
                                    start_month: Date.today.month,
                                    start_day: Date.today.day + 4,
                                    order: [:day, :month, :year] %>
