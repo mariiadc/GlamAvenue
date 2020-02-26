@@ -5,6 +5,7 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
+  <%= f.input :photo, as: :file, class: "custom-file-input" %>
   <%= f.input :location, collection: Good::LOCATION %>
   <%=  f.input :designer, collection: Good::DESIGNER%>
   <%=  f.input :category, collection: Good::CATEGORY %>
