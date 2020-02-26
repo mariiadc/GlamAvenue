@@ -12,5 +12,6 @@ class PagesController < ApplicationController
   def profile
     @bookings = Booking.where(user_id: current_user.id)
     @goods = Good.where(user_id: current_user.id)
+    @user = User.find(current_user.id)
   end
 end
