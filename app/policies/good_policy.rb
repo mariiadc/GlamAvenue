@@ -14,8 +14,13 @@ class GoodPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
   # only the user who created the restaurant is allowed to update it
   def update?
+    true
     # user - this is the current user
     # record - this is the restaurant in this case because its a RestaurantPolicy
     user_is_owner?
