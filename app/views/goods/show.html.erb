@@ -1,49 +1,16 @@
+<div class="page">
+<%= render partial: 'shared/carousel'%>
 
-<div>
-  <!-- images layout of show page -->
-  <div class="container">
-    <i class="fas fa-shopping-bag"></i>
-  </div>
-
-
-  <div class="container d-flex">
-    <div>
-    <%= @good.name %>
-
-    <%= @good.description %>
-    </div>
-    <div class="container w-25">
-      <%= simple_form_for [@good, @booking] do |f| %>
-           <%#= f.input :url %>
-            <%#= f.input :name %>
-      <%= f.input :start_date, as: :date, start_year: Date.today.year,
-                                   start_month: Date.today.month,
-                                   start_day: Date.today.day,
-                                   order: [:day, :month, :year] %>
-      <%= f.input :end_date, as: :date, start_year: Date.today.year,
-                                   start_month: Date.today.month,
-                                   start_day: Date.today.day + 4,
-                                   order: [:day, :month, :year] %>
-      <%= f.input :start_date, as: :string, required: false, input_html: { id: "start_date"} %>
-      <%= f.input :end_date, as: :string, required: false, input_html: { id: "end_date"} %>
-      <%=f.submit class: "btn btn-danger w-100" %>
-      <% end %>
-    </div>
-
-  </div>
-
+<div class="container _title">
+  <%= @good.name %>
 </div>
 
-
-<!-- @good.booking_all
-
-disable where
-          {
-            from: "2025-04-01",
-            to: "2025-05-01"
-        },
-        {
-            from: "2025-09-01",
-            to: "2025-12-01"
-        }
-    ] -->
+<div class="body">
+<div class="description">
+  <%= @good.description %>
+</div>
+<div class="container col-md-2 _dates">
+<%= render partial: 'shared/dates' %>
+</div>
+</div>
+</div>

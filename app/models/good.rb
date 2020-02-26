@@ -29,6 +29,7 @@ class Good < ApplicationRecord
 "Tote Bags"
 ]
 LOCATION = ["Lisbon", "Porto"]
+  has_many_attached :photos
   belongs_to :user # posts in your item
   has_many :bookings
   # has_many :users, through :bookings

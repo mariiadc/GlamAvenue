@@ -1,0 +1,87 @@
+<!--Carousel Wrapper-->
+<div id="carousel-with-lb" class="carousel slide carousel-multi-item _car-sel" data-ride="carousel">
+
+  <!--Controls-->
+<!--   <div class="controls-top">
+    <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="prev"><i
+        class="fas fa-chevron-left"></i></a>
+    <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="next"><i
+        class="fas fa-chevron-right"></i></a>
+  </div>
+ -->  <!--/.Controls-->
+
+  <!--Bottom Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-with-lb" data-slide-to="0" class="active secondary-color"></li>
+    <li data-target="#carousel-with-lb" data-slide-to="1" class="secondary-color"></li>
+    <!-- <li data-target="#carousel-with-lb" data-slide-to="2" class="secondary-color"></li> -->
+  </ol>
+  <!--/.Indicators-->
+
+  <!--Slides and lightbox-->
+
+  <div class="carousel-inner mdb-lightbox" role="listbox">
+    <div id="mdb-lightbox-ui"></div>
+    <!--First slide-->
+
+    <div class=" carousel-item active text-center">
+      <figure class="col-md-3 d-md-inline-block">
+        <!-- <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+          data-size="800x600">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+            class="img-fluid">
+        </a> -->
+        <%= cl_image_tag @good.photos.first.key, height: 300, width: 400, crop: :fill %>
+      </figure>
+      <figure class="col-md-3 d-md-inline-block">
+        <!-- <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+          data-size="800x600">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+            class="img-fluid">
+        </a> -->
+        <%= cl_image_tag @good.photos.second.key, height: 300, width: 400, crop: :fill %>
+      </figure>
+      <figure class="col-md-3 d-md-inline-block">
+        <!-- <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+          data-size="800x600">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+            class="img-fluid">
+        </a> -->
+        <%= cl_image_tag @good.photos.third.key, height: 300, width: 400, crop: :fill %>
+      </figure>
+
+    </div>
+     <div class=" carousel-item text-center">
+       <figure class="col-md-3 d-md-inline-block">
+        <!-- <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+          data-size="800x600">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+            class="img-fluid">
+        </a> -->
+        <%= cl_image_tag @good.photos.fourth.key, height: 300, width: 400, crop: :fill %>
+      </figure>
+      <figure class="col-md-3 d-md-inline-block">
+        <!-- <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+          data-size="800x600">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+            class="img-fluid">
+        </a> -->
+        <%= cl_image_tag @good.photos.fifth.key, height: 300, width: 400, crop: :fill %>
+      </figure>
+      <figure class="col-md-3 d-md-inline-block">
+        <!-- <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+          data-size="800x600">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg"
+            class="img-fluid">
+        </a> -->
+        <%= cl_image_tag @good.photos.last.key, height: 300, width: 400, crop: :fill %>
+      </figure>
+    </div>
+
+
+    <!--Second slide-->
+  </div>
+ <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->

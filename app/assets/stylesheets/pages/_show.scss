@@ -1,0 +1,43 @@
+._car-sel {
+ margin-top: 30px;
+ margin-bottom: 30px;
+}
+
+
+figure:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+._title {
+  font-family: 'Quattrocento';
+  font-size: 35px;
+  color: #261D12;
+  background-color: #f8f9fa;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #D9CDBF;
+  border-top: 1px solid #D9CDBF;
+}
+._dates {
+  margin: 0px 30px 30px 30px;
+
+}
+.body {
+  // width: 900px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.description {
+  text-align: left;
+  padding: 10px;
+  margin-left: 5px;
+}
+h6 {
+  font-family: 'Quattrocento';
+  text-align: center;
+  color: #261D12;
+  font-weight: bold;
+  font-size: 25px;
+
+}
