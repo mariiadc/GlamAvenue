@@ -3,20 +3,20 @@
     <li>Category</li> -->
 <!--<li>Designers</li>
     <li>Dates</li> -->
-<div class="container filter-page _con">
+<!-- <div class="container filter-page _con">
   <div class="row">
     <div class="col-6 _pad">
       <h2>List of Goods</h2>
     </div>
     <div class="col-6 text-right user-login _pad">
- <%= link_to 'add new good', new_good_path %>
-<%= link_to 'log in', 'users/sign_in' %>
+ <= link_to 'add new good', new_good_path %>
+< link_to 'log in', 'users/sign_in' %>
     </div>
   </div>
   <div class="row">
   <div class="col-2 menu-lateral _pad _ml">
-      <div class="items-displayed">
-    <div class="dropdown _dd">
+      <div class="items-displayed"> -->
+   <!--  <div class="dropdown _dd">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Location
       </button>
@@ -26,8 +26,8 @@
         <a class="dropdown-item" href="#">Another action</a>
       <a class="dropdown-item" href="#">Something else here</a>
   </div>
-</div>
- <div class="dropdown _dd">
+</div> -->
+<!--  <div class="dropdown _dd">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dates
       </button>
@@ -36,8 +36,8 @@
         <a class="dropdown-item" href="#">Another action</a>
       <a class="dropdown-item" href="#">Something else here</a>
   </div>
-</div>
- <div class="dropdown _dd">
+</div> -->
+ <!-- <div class="dropdown _dd">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Category
       </button>
@@ -49,8 +49,8 @@
         <a class="dropdown-item" href="#">Another action</a>
       <a class="dropdown-item" href="#">Something else here</a>
   </div>
-</div>
- <div class="dropdown _dd">
+</div> -->
+<!--  <div class="dropdown _dd">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Designers
       </button>
@@ -62,26 +62,23 @@
         <a class="dropdown-item" href="#">Another action</a>
       <a class="dropdown-item" href="#">Something else here</a>
       </div>
-  </div>
+  </div> -->
+
+<div class="cards">
+
+  <% @goods.each do |good| %>
+
+  <div class="cardy">
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path good.photos.first.key, crop: :fill %>')">
 </div>
+    <div class="card-trip-infos">
+    <div>
+       <h4><%= link_to good.name, good_path(good)%></h4>
+       <p><%= good.location %></p>
+    </div>
+      <h2 class="card-trip-pricing"><%=good.price%>$</h2>
+    </div>
 </div>
-  <div class="col-6 padding-small _pad">
-    <% @goods.each do |good|%>
-        <div class="card-item _ci">
-          <%= image_tag "bag1.jpeg", alt: "" %>
-          <div class="card-item-infos _cii">
-            <div>
-            <h4> <%= link_to good.name, good_path(good) %></h4>
-              <p><%= good.location %></p>
-              <p><%= good.price %>€</p>
-            </div>
-<!--             <h2 class="card-trip-pricing">£99.99</h2>
- -->          </div>
-        </div>
-    <% end %>
-  </div>
-  <div class="col-4 map">
-    <div></div>
-  </div>
-</div>
+  <!-- </div> -->
+  <% end %>
 </div>
