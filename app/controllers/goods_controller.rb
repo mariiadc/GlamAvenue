@@ -27,7 +27,7 @@ skip_before_action :authenticate_user!, only: [:show, :index, :root]
     else
       render :new
    end
-    end
+  end
 
  private
 

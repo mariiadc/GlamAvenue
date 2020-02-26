@@ -1,0 +1,46 @@
+
+  <h2>All my rent luxury goods</h2>
+
+  <h4>My future bookings</h4>
+
+  <ul >
+
+    <% @bookings.each do |booking| %>
+      <% if booking.start_date >= Date.today %>
+                <% if booking.status == false %>
+                <li>
+                  <div >
+                    <h2><%= booking.good.name %></h2>
+                    <p>City: <strong><%= booking.good.location %></strong></p>
+                    <p>Address: <strong><%= booking.good.location %></strong></p>
+                    <p>Total price: <strong><%= booking.value %> €</strong></p>
+                    <p>Starting date: <strong><%= booking.start_date.strftime('%A %d %B %Y') %> </strong></p>
+                    <p>End date: <strong><%= booking.end_date.strftime('%A %d %B %Y') %> </strong></p>
+                  </div>
+                  <div>
+                    <ul>
+                      <li><strong>Wait for confirmation. Stay sharp</strong></li>
+                    </ul>
+                  </div>
+                </li>
+                <%# end %>
+
+                <% else %>
+                <li>
+                <div>
+                  <h2><%= booking.good.name %></h2>
+                  <p>City: <strong><%= booking.good.location%></strong></p>
+                  <p>Address: <strong><%= booking.good.address %></strong></p>
+                  <p>Total price: <strong><%= booking.value %> €</strong></p>
+                </div>
+                <div>
+                  <ul>
+                    <li><strong>The booking is confirmed!</strong></li>
+                  </ul>
+                </div>
+                </li>
+                <% end %>
+        <% end %>
+    <% end %>
+  </ul>
+

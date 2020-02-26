@@ -1,15 +1,87 @@
-<h1>List of Goods</h1>
+<!-- <div class="container">
+    <li>Location</li>
+    <li>Category</li> -->
+<!--<li>Designers</li>
+    <li>Dates</li> -->
+<div class="container filter-page">
+  <div class="row">
+    <div class="col-6">
+      <h2>List of Goods</h2>
+    </div>
+    <div class="col-6 text-right user-login">
+ <%= link_to 'add new good', new_good_path %>
+<%= link_to 'log in', 'users/sign_in' %>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-2 menu-lateral">
+      <div class="items-displayed">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Location
+      </button>
+        <ul><li>Lisboa</li><li>Porto</li></ul>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+ <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dates
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+ <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Category
+      </button>
 
-<div class="goods">
-      <div>
-      <% @goods.each do |good|%>
-      <h2 class= ""> <%= link_to good.name, good_path(good) %></h2>
-      <p><%= good.location %></p>
-      <p><%= good.price %></p>
-      </div>
-      <% end %>
+ <ul><li>Clutches</li><li>Crossbody Bags</li><li>Mini Bags</li><li>Shoper Bags</li></ul>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+ <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Designers
+      </button>
+
+        <ul><li>Balenciaga</li><li>Bottega Veneta</li><li>Celine</li><li>Chanel</li></ul>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
       </div>
   </div>
-
-<%= link_to 'add new good', new_good_path %>
-<%= link_to 'log in', 'users/sign_in' %>
+</div>
+</div>
+  <div class="col-6 padding-small">
+    <% @goods.each do |good|%>
+        <div class="card-item">
+          <%= image_tag "bag1.jpeg", alt: "" %>
+          <div class="card-item-infos">
+            <div>
+            <h4> <%= link_to good.name, good_path(good) %></h4>
+              <p><%= good.location %></p>
+              <p><%= good.price %>€</p>
+            </div>
+<!--             <h2 class="card-trip-pricing">£99.99</h2>
+ -->          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="col-4 map">
+    <div></div>
+  </div>
+</div>
+</div>

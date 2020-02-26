@@ -28,10 +28,10 @@
     <i class="far fa-user-circle" id="profile"></i>
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Profile</a>
-    <a class="dropdown-item" href="#">Add booking</a>
-    <a class="dropdown-item" href="#">List my bookings</a>
-    <a class="dropdown-item" href="#">Create item</a>
+    <%= link_to 'Profile', profile_path, class: "dropdown-item" %>
+    <%= link_to 'Add booking', goods_path, class: "dropdown-item" %>
+    <%= link_to 'List my bookings', bookings_path, class: "dropdown-item" %>
+    <%= link_to 'Create item', new_good_path, class: "dropdown-item" %>
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
 </div>
