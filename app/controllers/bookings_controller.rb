@@ -1,13 +1,15 @@
 class BookingsController < ApplicationController
-  before_action :find, only: [:show]
+  before_action :find, only: [:show, :update]
 
   def index
-    @bookings = Booking.where(good_id: params[:good_id])
-    authorize @booking
+    policy_scope(Booking).order(created_at: :desc)
+    @bookings = Booking.where(user_id: current_user)
+
+    authorize @bookings
   end
 
   def show
-
+    @good = @booking.good
   end
 
   def new
@@ -21,10 +23,13 @@ class BookingsController < ApplicationController
     @good = Good.find(params[:good_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-
     authorize @booking
 
-    @booking.good_id = @good
+
+
+    @booking.good_id = @good.id
+    @booking.value = (@booking.end_date - @booking.start_date).to_i * @good.price.to_i
+
     if @booking.save
       redirect_to root_path, notice: 'Your item was successfully booked.'
     else
@@ -38,10 +43,19 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+
+  def update
+    find
+    @booking.status = true
+    @booking.save
+    redirect_to booking_path(@booking)
+
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :good_id)
+    params.require(:booking).permit(:start_date, :end_date, :value, :user_id, :good_id)
   end
 
   def find

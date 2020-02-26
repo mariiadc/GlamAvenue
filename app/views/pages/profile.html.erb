@@ -1,0 +1,62 @@
+
+
+<div class="container">
+  <div>
+    <div>
+      <h2> Profile Page</h2>
+    </div>
+  </div>
+
+  <div>
+    <!-- this div contains all the body below h2 -->
+    <div>
+    <!-- sidebar -->
+
+
+    </div>
+    <div>
+      <!-- contains center of page -->
+      <div class="d-flex">
+      <div>
+        <!-- My goods list -->
+        <% @goods.each do |good| %>
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification-content">
+
+            <p><small><%= good.name  %></small></p>
+            <p><%= good.description %></p>
+          </div>
+          <div class="notification-actions">
+            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+
+      <div>
+        <!-- My reservations -->
+        <% @bookings.each do |booking| %>
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification-content">
+
+            <p><small><%= booking.good.name  %></small></p>
+            <p>From:<%= booking.start_date %>, to: <%= booking.end_date %> </p>
+          </div>
+          <div class="notification-actions">
+            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+          </div>
+      </div>
+      <% end %>
+    </div>
+    </div>
+
+
+</div>
+
+  </div>
+</div>
