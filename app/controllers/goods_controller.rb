@@ -23,7 +23,7 @@ skip_before_action :authenticate_user!, only: [:show, :index, :root]
     authorize @good
 
     if @good.save
-      redirect_to goods_path, notice: 'Your item was successfully created.'
+      redirect_to    @good, notice: 'Your item was successfully created.'
     else
       render :new
    end
@@ -32,6 +32,6 @@ skip_before_action :authenticate_user!, only: [:show, :index, :root]
  private
 
   def good_params
-    params.require(:good).permit(:name, :description, :category, :price, :designer, :location, :user_id)
+    params.require(:good).permit(:name, :description, :category, :price, :designer, :location, :user_id, photos: [])
   end
 end
