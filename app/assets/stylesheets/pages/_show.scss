@@ -9,35 +9,35 @@ figure:hover {
 }
 
 ._title {
-  font-family: 'Quattrocento';
   font-size: 35px;
   color: #261D12;
   background-color: #f8f9fa;
-  font-weight: bold;
   text-align: center;
   border-bottom: 1px solid #D9CDBF;
   border-top: 1px solid #D9CDBF;
 }
-._dates {
-  margin: 0px 30px 30px 30px;
 
-}
-.body {
+._body {
   // width: 900px;
-  margin-top: 30px;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0px;
 }
 .description {
   text-align: left;
   padding: 10px;
-  margin-left: 5px;
-}
-h6 {
-  font-family: 'Quattrocento';
+  margin-right: 30px;
+ }
+
+
+ ._dates {
+  margin-left: 30px;
+
+ }
+
+#dates {
   text-align: center;
   color: #261D12;
-  font-weight: bold;
-  font-size: 25px;
-
+  margin-bottom: 10px;
 }

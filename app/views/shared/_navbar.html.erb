@@ -7,33 +7,29 @@
 </nav>
  -->
 <nav class="navbar navbar-light bg-light main" id="nav-shared">
-  <%= link_to 'GlamAvenue' ,root_path, class: "navbar-brand ml-5" %>
-
-
-
-
-<div class="right-side">
-<div class="cntr">
-  <div class="cntr-innr">
-    <label class="search" for="inpt_search">
-      <input id="inpt_search" type="text" />
-    </label>
+  <%= link_to 'GlamAvenue' ,root_path, class: "nav-br-logo ml-5" %>
+  <div class="right-side">
+    <div class="cntr">
+      <div class="cntr-innr">
+        <label class="search _nav-search" for="inpt_search">
+          <input id="inpt_search" type="text" />
+        </label>
+      </div>
+    </div>
+    <div class="cart mx-3">
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+    <div class="dropdown mr-5">
+      <a class="btn dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="far fa-user-circle" id="profile"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <%= link_to 'Profile', profile_path, class: "dropdown-item" %>
+        <%= link_to 'Add booking', goods_path, class: "dropdown-item" %>
+        <%= link_to 'List my bookings', bookings_path, class: "dropdown-item" %>
+        <%= link_to 'Add item', new_good_path, class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </div>
   </div>
-</div>
-<div class="cart mx-3">
-  <i class="fas fa-shopping-cart"></i>
-</div>
-<div class="dropdown mr-5">
-  <a class="btn dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="far fa-user-circle" id="profile"></i>
-  </a>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <%= link_to 'Profile', profile_path, class: "dropdown-item" %>
-    <%= link_to 'Add booking', goods_path, class: "dropdown-item" %>
-    <%= link_to 'List my bookings', bookings_path, class: "dropdown-item" %>
-    <%= link_to 'Add item', new_good_path, class: "dropdown-item" %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-  </div>
-</div>
-</div>
- </nav>
+</nav>
