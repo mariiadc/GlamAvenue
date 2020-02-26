@@ -1,7 +1,11 @@
-<h1>Goods#new</h1>
-<p>Find me in app/views/goods/new.html.erb</p>
+<div class="container boxy">
+<h1 class="titlex">Add your item</h1>
 
+<div class="rowy">
+<div class="col-6">
 <%= simple_form_for [@good] do |f| %>
+<div class="form-inputs">
+
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
@@ -9,7 +13,17 @@
   <%= f.input :location, collection: Good::LOCATION %>
   <%=  f.input :designer, collection: Good::DESIGNER%>
   <%=  f.input :category, collection: Good::CATEGORY %>
-
-  <%= f.submit "Add your item", class: "btn btn-primary" %>
-  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+<div class="row d-flex justify-content-between">
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary", id:"second" %>
+ <%= f.submit "Add your item", class: "btn btn-primary", id:"first" %>
+</div>
+</div>
 <% end %>
+</div>
+
+  <div class="col-6">
+  <%= image_tag "online.svg", alt: "online", width: "80%", id:"online" %>
+  </div>
+
+  </div>
+</div>
