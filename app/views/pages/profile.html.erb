@@ -29,7 +29,10 @@
           </div>
           <div class="notification-actions">
             <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+            <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
+            <i class="far fa-trash-alt"> </i>
+              <% end %>
+            <!-- <a href="#">Delete </i></a> -->
           </div>
         </div>
 

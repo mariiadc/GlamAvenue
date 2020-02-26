@@ -12,7 +12,7 @@ before_action :find, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-    @good = Good.find(params[:id])
+    # @good = Good.find(params[:id])
     @booking = Booking.new # This is so that we can have the Booking form in the show page
     authorize @good
   end
@@ -31,19 +31,25 @@ before_action :find, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+    authorize @good
   end
 
   def update
     @good.update(good_params)
+    authorize @good
     redirect_to good_path(@good)
   end
 
   def destroy
+    authorize @good
     @good.destroy
     redirect_to goods_path
   end
  private
 
+  def find
+    @good = Good.find(params[:id])
+  end
   def good_params
     params.require(:good).permit(:name, :description, :category, :price, :designer, :location, :user_id, photos: [])
   end
