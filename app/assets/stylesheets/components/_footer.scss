@@ -1,29 +1,33 @@
 
-footer .container {
-  padding: 30px;
+footer {
+
   background-color: #d9cdbf;
-  //display: flex;
-  //align-items: center;
   text-align: center;
-  height: 130px;
+  height: 200px;
   max-width: 100%;
 
 
-  .footer-links a, .footer-copyright a {
+}
+
+  a {
     color: #261d12;
     display:inline;
     margin-right: 15px;
-    font-family:Montserrat;
+    font-family: 'Montserrat';
+    padding-bottom: 10px;
   }
+
+a:hover {
+  color: #261d12;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 
-footer {
-  //position: absolute;
-  bottom: 0;
-  margin: 0 auto;
-}
 
-.footer-copyright {
-  font-size:px;
+i {
+  font-size: 35px;
 }
-
+.icons {
+  padding-top: 50px;
+}

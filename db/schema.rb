@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_184602) do
+ActiveRecord::Schema.define(version: 2020_02_25_155000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "start_date", null: false
-    t.string "end_date", null: false
     t.bigint "user_id"
     t.bigint "good_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["good_id"], name: "index_bookings_on_good_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
