@@ -9,6 +9,7 @@ require "open-uri"
 
 puts "Destroying all"
 
+Booking.destroy_all
 Good.destroy_all
 User.destroy_all
 
