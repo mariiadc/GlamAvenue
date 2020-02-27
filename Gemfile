@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
+gem 'geocoder'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'bootsnap', require: false
@@ -15,7 +16,6 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'simple_form'
 gem 'pundit'
 
 # Devise gem- User sign in and login
@@ -31,5 +31,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+
 end

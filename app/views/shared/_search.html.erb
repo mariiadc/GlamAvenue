@@ -7,7 +7,7 @@
       </section>
     </div>
     <%= simple_form_for (@good ) do |f|%>
-      <%= f.input :location, collection: Good::LOCATION %>
+      <%= f.input :address %>
       <%=  f.input :designer, collection: Good::DESIGNER%>
       <%=  f.input :category, collection: Good::CATEGORY %>
       <div class="form-row">
