@@ -15,7 +15,9 @@ class PagesController < ApplicationController
     @goods = Good.where(user_id: current_user.id)
     @user = User.find(current_user.id)
 
-    @next_booking = Booking.where(:user_id => current_user.id, :start_date => Date.today).all
-    @next_booking = Booking.find(@next_booking.ids[0])
+    unless @bookings.count == 0
+      @next_booking = Booking.where(:user_id => current_user.id, :start_date => Date.today).all
+      @next_booking = Booking.find(@next_booking.ids[0])
+    end
   end
 end
