@@ -16,18 +16,18 @@ User.destroy_all
 
 puts "Creating seed"
 
-User.create!(first_name: "john", last_name: "smith", email: "franbilio@gmail.com", password: "123456", address: "sdasda", phone_number: "sdad")
-second = User.create!(first_name: "Michel", last_name: "smith", email: "facsr92@gmail.com", password: "123456", address: "sdsd", phone_number: "sdad")
+User.create!(first_name: "John", last_name: "Smith", email: "franbilio@gmail.com", password: "123456", address: " R. Garrett 73 75, 1200-203 Lisboa", phone_number: "965677545")
+second = User.create!(first_name: "Michaela", last_name: "O'nill", email: "facsr92@gmail.com", password: "123456", address: "R. Tomás da Anunciação 26, 1350-142 Lisboa", phone_number: "988887655")
 
-file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726595/YbipQ1gB29usHmhQGrFQGF7A.jpg')
-file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726596/FQw871NEi7XGMccgvrBDufvX.jpg')
-file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726598/LoxuDhRSk4KLynbfYhLCMsRK.jpg')
-file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726601/ABtP24sntPbmkaic7oQ4zzcu.jpg')
-file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726602/kk1UWfL5YPvS2A8XbYf4tw53.jpg')
-file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726603/zFMxybtwQEizCzAde46iAMat.jpg')
+file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/c2_zxbxhv.jpg')
+file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/c5_njuhyg.jpg')
+file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/c6_sgipyv.jpg')
+file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/c3_wejrby.jpg')
+file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/c4_mw7ajh.jpg')
+file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/c1_n9igjy.jpg')
 
 good = Good.create(name: "Chanel 10", description: "Leather: Lambskin. Gentle wear should be expected and reinforces the history of this heritage piece 3 interior pockets Dust bag included Leather lining Weight: 12oz / 0.34kg Made in France",
-  category: "Shoulder Bags", price: 25, designer: "Chanel", user_id: User.first.id, location: "Lisbon" )
+  category: "Shoulder Bags", price: 50, designer: "Chanel", user_id: User.first.id, location: "Lisbon" )
 good.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 good.photos.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
 good.photos.attach(io: file3, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -36,15 +36,15 @@ good.photos.attach(io: file5, filename: 'nes.jpg', content_type: 'image/jpg')
 good.photos.attach(io: file6, filename: 'nes.jpg', content_type: 'image/jpg')
 good.save!
 
-file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726135/1Cz1fZ3BXaBL7nGiQeWrMQfF.jpg')
-file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726136/AT7MALUuXzYiNm59M5wMSA8i.jpg')
-file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726138/UL5qNA5BWZVcx1At9ahenmjy.jpg')
-file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726140/KPtbYAqJKqx3zZ4XqLV7jk5E.jpg')
-file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582726142/M52PmLC92vd43UhgpvucWiso.jpg')
-file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582725438/9v7SVwxHftscjdByy6hrVYco.jpg')
+file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/bv3_xjtuvb.jpg')
+file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/bv5_zhsvgv.jpg')
+file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/bv4_ihjpld.jpg')
+file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/bv1_whhewq.jpg')
+file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/bv2_qlklj8.jpg')
+file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/bv2_qlklj8.jpg')
 
 good = Good.create(name: "The Pouch", description: "One of the first designs by Creative Director Daniel Lee, The Pouch is an oversized clutch made with delicate folds of smooth buttery soft calf leather that envelope the bag’s frame and create a voluminous rounded shape. New for Spring/Summer 2019, The Pouch reflects Bottega Veneta’s heritage of leather craftsmanship with a modern sensibility.",
-  category: "Clutches", price: 15, designer: "Bottega Veneta", user_id: second.id, location: "Lisbon" )
+  category: "Clutches", price: 56, designer: "Bottega Veneta", user_id: second.id, location: "Lisbon" )
 good.photos.attach(io: file, filename: 'bv1.jpg', content_type: 'image/jpg')
 good.photos.attach(io: file2, filename: 'bv2.jpg', content_type: 'image/jpg')
 good.photos.attach(io: file3, filename: 'bv3.jpg', content_type: 'image/jpg')
@@ -54,22 +54,40 @@ good.photos.attach(io: file6, filename: 'bv6.jpg', content_type: 'image/jpg')
 good.save!
 
 
-file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582727035/vuzLmJkvJda8r1hYkcxN3Twn.jpg')
-file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582727037/SebHHYzGqGYKjfKLRA6pA8rG.jpg')
-file3= URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582727040/fifyPQGNBz2iwJrT3be5kdrz.jpg')
-file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582727041/zoY2NArNVcG3sDCfeou2BE6E.jpg')
-file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582727033/8Aq5SRgGiSo1ZmUG6cJSzkHC.jpg')
-file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582727037/SebHHYzGqGYKjfKLRA6pA8rG.jpg')
+file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/lv5_d2uiui.jpg')
+file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/lv2_x4h69o.jpg')
+file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/lv_vzgvix.jpg')
+file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/lv_vzgvix.jpg')
+file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/lv1_v6v1ie.jpg')
+file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798221/bags/lv4_u2hymw.jpg')
 
 good = Good.create(name: "NEVERFULL GM", description: "The Neverfull GM tote unites timeless design with heritage details. Made from supple Monogram canvas with natural cowhide trim, it is ultra-roomy but never bulky, with side laces that cinch for a sleek allure or loosen for a more casual look. Slim, comfortable handles slip easily over the shoulder or arm. Lined in colourful textile, it features a removable pouch that can serve as a clutch or an extra pocket.",
-  category: "Shoulder Bags", price: 30, designer: "Louis Vuitoon", user_id: User.first.id, location: "Lisbon" )
+  category: "Shoulder Bags", price: 68, designer: "Louis Vuitton", user_id: User.first.id, location: "Lisbon" )
 
-good.photos.attach(io: file, filename: 'lv1.jpg', content_type: 'image1/jpg')
+good.photos.attach(io: file, filename: 'lv5.jpg', content_type: 'image1/jpg')
 good.photos.attach(io: file2, filename: 'lv2.jpg', content_type: 'image2/jpg')
-good.photos.attach(io: file3, filename: 'lv3.jpg', content_type: 'image3/jpg')
-good.photos.attach(io: file4, filename: 'lv4.jpg', content_type: 'image4/jpg')
-good.photos.attach(io: file5, filename: 'lv5.jpg', content_type: 'image5/jpg')
-good.photos.attach(io: file6, filename: 'lv6.jpg', content_type: 'image6/jpg')
+good.photos.attach(io: file3, filename: 'lv.jpg', content_type: 'image3/jpg')
+good.photos.attach(io: file4, filename: 'lv3.jpg', content_type: 'image4/jpg')
+good.photos.attach(io: file5, filename: 'lv1.jpg', content_type: 'image5/jpg')
+good.photos.attach(io: file6, filename: 'lv4.jpg', content_type: 'image6/jpg')
+good.save!
+
+
+file = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/br1_rh7xed.jpg')
+file2 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/br5_j6c03r.jpg')
+file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798220/bags/br3_gzrdw7.jpg')
+file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/br4_ecsahy.jpg')
+file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/br2_nrbpfr.jpg')
+file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1582798219/bags/br2_nrbpfr.jpg')
+
+good = Good.create(name: "Vintage check travel pouch", description: "Travel pouch by Burberry in cotton blend with Vintage check motif featuring silicone patch with raised Burberry lettering at front, magnetic press-stud and zip closure, leather handle and interior with one zip pocket and two slit pockets. Spring/Summer 2020 collection.",
+  category: "Crossbody Bags", price: 45, designer: "Burberry", user_id: second.id, location: "Porto" )
+good.photos.attach(io: file, filename: 'br1.jpg', content_type: 'image/jpg')
+good.photos.attach(io: file2, filename: 'br2.jpg', content_type: 'image/jpg')
+good.photos.attach(io: file3, filename: 'br3.jpg', content_type: 'image/jpg')
+good.photos.attach(io: file4, filename: 'br4.jpg', content_type: 'image/jpg')
+good.photos.attach(io: file5, filename: 'br5.jpg', content_type: 'image/jpg')
+good.photos.attach(io: file6, filename: 'br6.jpg', content_type: 'image/jpg')
 good.save!
 
 

@@ -1,39 +1,38 @@
-.btn-primary {
-
-    font-family: 'Montserrat';
-    background:  #D9BD8B;
-    border-color: transparent;
-    color:  #F2E8DF;
-    font-weight: bold;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-#btnlogin{
-  margin-bottom: 0px;
-
-}
-
-.btn-primary:hover{
-  background:  #6c757d;
-  color:  #F8F9FA;
-  border-color: #6c757d;
-  border-radius: 2px;
-}
-
-.form-group {
+._fg {
     margin-bottom: 5px;
 }
-.text-center {
+._tc {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.login{
-font-size: 2rem;
-font-family: "Raleway", "Helvetica", "sans-serif", "Montserrat", "Quattrocento";
-font-weight: 500;
-line-height: 1.2;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  text-align: center;
-}
+// .login{
+// font-size: 2rem;
+// font-family: "Raleway", "Helvetica", "sans-serif", "Montserrat", "Quattrocento";
+// font-weight: 500;
+// line-height: 1.2;
+//   margin-top: 20px;
+//   margin-bottom: 10px;
+//   text-align: center;
+// }
+// .btn-primary {
+
+//     font-family: 'Montserrat';
+//     background:  #D9BD8B;
+//     border-color: transparent;
+//     color:  #F2E8DF;
+//     font-weight: bold;
+//     padding: 10px;
+//     margin-bottom: 10px;
+// }
+// #btnlogin{
+//   margin-bottom: 0px;
+
+// }
+
+// .btn-primary:hover{
+//   background:  #6c757d;
+//   color:  #F8F9FA;
+//   border-color: #6c757d;
+//   border-radius: 2px;
+// }
