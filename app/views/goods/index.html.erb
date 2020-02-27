@@ -59,11 +59,11 @@
 <div class="cards _cards-home c-ind-b">
   <% @goods.each do |good| %>
   <div class="card _card-home c-body">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path good.photos.first.key, crop: :fill %>')">
+    <div class="card-category rounded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path good.photos.first.key, crop: :fill %>')">
     </div>
     <div class="card-good-infos">
       <div>
-        <h4><%= link_to good.name, good_path(good)%></h4>
+        <h5 id="good-name-index"><%= link_to good.name, good_path(good)%></h5>
         <p><%= good.location %></p>
       </div>
         <h6 class="card-good-pricing"><%=good.price%>€</h6>
