@@ -1,5 +1,8 @@
 .c-body:hover {
-  box-shadow: inset 0px 0px 16px 0px rgba(214,214,214,1);
+border-radius: 10px;
+background: #ffffff;
+box-shadow:  20px 20px 60px #d9d9d9,
+            -20px -20px 60px #ffffff;
 }
 
 .card-category{
@@ -10,6 +13,7 @@
 
 .card-good-infos {
   padding: 16px;
+  padding-bottom: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -21,6 +25,7 @@
   border-bottom: 1px solid #D9CDBF;
 }
 
+// #good-name-index
 
 
 

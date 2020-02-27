@@ -1,0 +1,24 @@
+  <div class="row _r-add-item">
+    <div class="col-5">
+      <%= simple_form_for [@good] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+        <!-- < %= f.input :address, collection: Good::LOCATION %> -->
+        <%=  f.input :designer, collection: Good::DESIGNER%>
+        <%=  f.input :category, collection: Good::CATEGORY %>
+        <div class="row d-flex justify-content-between">
+          <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary ml-3 mb-2" %>
+          <%= f.submit "Save", class: "btn btn-outline-secondary _button-gold mr-3 mb-2"%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-6">
+      <%= image_tag "online.svg", class:"mx-auto d-block", alt: "online", width: "80%", id:"online" %>
+    </div>
+  </div>
+
