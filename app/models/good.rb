@@ -15,7 +15,7 @@ class Good < ApplicationRecord
 "Hermes",
 "Jimmy Choo",
 "Loewe",
-"Louis Vuitoon",
+"Louis Vuitton",
 "Prada",
 "Tory Burch",
 "Valentino",
@@ -26,7 +26,7 @@ class Good < ApplicationRecord
 "Mini Bags",
 "Shopper Bags",
 "Shoulder Bags",
-"Top Handle Bags",
+"Handle Bags",
 "Tote Bags"
 ]
 LOCATION = ["Lisbon", "Porto"]
