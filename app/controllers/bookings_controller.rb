@@ -10,8 +10,8 @@ class BookingsController < ApplicationController
 
   def show
     @good = @booking.good
-        authorize @booking
-
+    authorize @booking
+    authorize @good # Is it a mistake? 
   end
 
   def new
