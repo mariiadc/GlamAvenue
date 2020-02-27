@@ -1,73 +1,32 @@
-<!-- <div class="container">
-    <li>Location</li>
-    <li>Category</li> -->
-<!--<li>Designers</li>
-    <li>Dates</li> -->
-<!-- <div class="container filter-page _con">
-  <div class="row">
-    <div class="col-6 _pad">
-      <h2>List of Goods</h2>
-    </div>
-     </div>
-  <div class="row">
-  <div class="col-2 menu-lateral _pad _ml">
-      <div class="items-displayed">
-    <div class="dropdown _dd">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Location
-      </button>
-
-  </div>
-</div>
- <div class="dropdown _dd">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dates
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
- <div class="dropdown _dd">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Category
-      </button>
-
- <ul class="ul-in"><li>Clutches</li><li>Crossbody Bags</li><li>Mini Bags</li><li>Shoper Bags</li></ul>
-
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
- <div class="dropdown _dd">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Designers
-      </button>
-
-        <ul class="ul-in"><li>Balenciaga</li><li>Bottega Veneta</li><li>Celine</li><li>Chanel</li></ul>
-
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-  </div>
- -->
-<div class="cards _cards-home c-ind-b">
-  <% @goods.each do |good| %>
-  <div class="card _card-home c-body">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path good.photos.first.key, crop: :fill %>')">
-    </div>
-    <div class="card-good-infos">
-      <div>
-        <h4><%= link_to good.name, good_path(good)%></h4>
-        <p><%= good.location %></p>
-      </div>
-        <h6 class="card-good-pricing"><%=good.price%>€</h6>
-      </div>
-    </div>
+<div class=" allgoods">
+<div class="col-2 pl-3 fil-b">
+  <h4 class="filter-head pl-4 my-3 py-3">Designer</h4>
+  <% Good::DESIGNER.each do |f| %>
+     <ul class="filters pl-4"><li><%= f %></li></ul>
   <% end %>
+  <h4 class="filter-head pl-4 my-3 py-3">Category</h4>
+  <% Good::CATEGORY.each do |f| %>
+     <ul class="filters pl-4"><li><%= f %></li></ul>
+  <% end %>
+  </div>
+  <div class="cards   c-ind-b  col-7">
+    <% @goods.each do |good| %>
+    <div class="card  c-body">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path good.photos.first.key, crop: :fill %>')">
+      </div>
+      <div class="card-good-infos">
+        <div>
+          <h4><%= link_to good.name, good_path(good)%></h4>
+          <p><%= good.category%></p>
+          <h6><em><%= good.designer%></em></h6>
+        </div>
+          <h6 class="card-good-pricing mb-3"><%=good.price%>€/day</h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="map"  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="pk.eyJ1IjoibWFyaWlhZGMiLCJhIjoiY2s3NHZ2NnQyMDlrbzNlbnQ2cnFrdWNpZiJ9.ZYmsU_WNi11Tl2xL_v-hfw" class="container col-3 mx-0">
+  </div>
 </div>
