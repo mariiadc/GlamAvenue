@@ -5,7 +5,11 @@
   </div>
   <div class="container _body mt-4">
     <div class="description ">
-      <%= @good.description %>
+      <div class="card-good-infos">
+     <p><em> <%= @good.designer %> </em></p>
+     <p><strong> <%= @good.price %> €/day</strong></p>
+     </div>
+      <p><%= @good.description %></p>
     </div>
     <div class="container col-md-4 _dates mb-4 ">
       <%= render partial: 'shared/dates' %>

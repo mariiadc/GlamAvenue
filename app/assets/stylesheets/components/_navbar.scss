@@ -28,13 +28,13 @@ $icn-color: #261D12;
 ._nav-search {
   display: inline-block;
   position: relative;
-  height: 25px;
-  width: 25px;
+  height: 22px;
+  width: 20px;
   box-sizing: border-box;
   margin: 0px 8px 7px 0px;
   padding: 7px 9px 0px 9px;
   border: 3px solid $icn-color;
-  border-radius: 25px;
+  border-radius: 30px;
   transition: all 200ms ease;
   cursor: text;
 
@@ -44,7 +44,7 @@ $icn-color: #261D12;
     width: 3px;
     height: 20px;
     right: -5px;
-    top: 15px;
+    top: 12px;
     background: $icn-color;
     border: 1px solid;
     border-radius: 3px;
@@ -78,14 +78,14 @@ $icn-color: #261D12;
   left: -100%;
 }
 #profile {
-  font-size: 35px;
+  font-size: 25px;
 }
 .cntr {
   padding-top: 10px;
 }
 
 .cart {
-   font-size: 35px;
+   font-size: 25px;
 }
 
 .text-navbar {
