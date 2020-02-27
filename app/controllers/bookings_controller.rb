@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
 
   def show
     @good = @booking.good
+    authorize @good
   end
 
   def new
