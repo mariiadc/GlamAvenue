@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def index
+    @good = Good.new
     @goods = Good.all
   end
 
