@@ -1,14 +1,5 @@
-<h1>Edit good</h1>
+<div class="container _c-add-item">
+  <h1 class="title _t-add-item">Edit your item</h1>
+  <%= render partial: 'shared/add-edit-good' %>
+</div>
 
-<%= simple_form_for [@good] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
-  <%= f.input :address %>
-  <%=  f.input :designer, collection: Good::DESIGNER%>
-  <%=  f.input :category, collection: Good::CATEGORY %>
-
-  <%= f.submit "Add your item", class: "btn btn-outline-secondary _button-gold" %>
-  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-<% end %>

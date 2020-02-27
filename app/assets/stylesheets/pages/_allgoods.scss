@@ -1,5 +1,8 @@
 .c-body:hover {
-  box-shadow: inset 0px 0px 16px 0px rgba(214,214,214,1);
+border-radius: 10px;
+background: #ffffff;
+box-shadow:  20px 20px 60px #d9d9d9,
+            -20px -20px 60px #ffffff;
 }
 .card-category{
   height: 250px;
@@ -9,6 +12,7 @@
 }
 .card-good-infos {
   padding: 16px;
+  padding-bottom: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -23,12 +27,14 @@
   border: transparent;
 }
 
+
 .allgoods {
   display: flex;
   width: 100%;
   margin: 0px;
   margin-left: 0px;
 }
+
 
 
 .c-ind-b {
