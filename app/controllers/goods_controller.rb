@@ -1,6 +1,7 @@
 class GoodsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:show, :index, :root]
-before_action :find, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :index, :root]
+  before_action :find, only: [:show, :edit, :update, :destroy]
+
   def index
 
     if params[:designer].present? && params[:category].present?
