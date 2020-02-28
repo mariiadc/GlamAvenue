@@ -1,24 +1,18 @@
 
-<div class="container _show">
+<div class="container">
   <div class="row heading_show">
-
-<h2>All my booked luxury items</h2>
+    <h2>My current booked luxury item</h2>
   </div>
-<div class="row">
-  <div class="col-6">
-    <div class="_card-show rounded">
+
+  <div class="_card-show ">
     <%= cl_image_tag @good.photos.first.key, crop: :fill %>
-  <h4><%= @booking.good.name %></h4>
+    <h4><%= @booking.good.name %></h4>
     <p>Total price: <strong><%= @booking.value %> €</strong></p>
     <p>Starting date: <strong><%= @booking.start_date.strftime('%A %d %B %Y') %> </strong></p>
     <p>End date: <strong><%= @booking.end_date.strftime('%A %d %B %Y') %> </strong></p>
     <p>Designer: <strong><%= @good.designer %> </strong></p>
     <p>Category: <strong><%= @good.category %> </strong></p>
+  </div>
+  <%= link_to 'Back', root_path, class: "btn btn-outline-secondary _button-gold mb-0" %>
 </div>
 
-  <button type="button" class="btn btn-outline-secondary mr-3 my-3 #show-button">Cancel</button>
-
-
-</div>
-</div>
-</div>
