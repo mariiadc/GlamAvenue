@@ -1,58 +1,106 @@
 
 
-<div class="container">
+<div class="mx-5">
   <div>
     <div>
-      <h2> Profile Page</h2>
+      <h2 class="mt-4"> Profile Page</h2>
     </div>
   </div>
 
-  <div>
+  <div class="mb-4">
     <!-- this div contains all the body below h2 -->
     <div>
     <!-- sidebar -->
       <div class="d-flex">
         <!-- container for card of profile -->
         <div class="card  _user-info" style="width: 23rem;">
-        <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-        <p class="card-text"><strong>Name: </strong> <%= @user.first_name %></p>
-        <p class="card-text"><strong>Last name:</strong> <%= @user.last_name %></p>
-        <p class="card-text"><strong>Addres:</strong> <%= @user.address %></p>
-        <p class="card-text"><strong>Phone:</strong> <%= @user.phone_number %></p>
-        <p class="card-text"><strong>Email:</strong> <%= @user.email %></p>
-        <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Edit Profile</a>
+        <img src="https://www.historyisfun.org/wp-content/uploads/2018/09/John-Smith-picture.jpg" class="card-img-top" alt="...">
+          <div class="card-body _profile-card-body">
+            <h5>Name</h5>
+            <p class="card-text"><%= @user.first_name %> <%= @user.last_name %></p>
+            <h5>Location</h5>
+            <p class="card-text"><!-- <i class="fas fa-map-marker-alt profile-marker"></i> -->  <%= @user.address %></p>
+            <h5><strong>Contact</strong></h5>
+            <p class="card-text"><%= @user.phone_number %></p>
+            <h5><strong>Email</strong></h5>
+            <p class="card-text"><%= @user.email %></p>
+            <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Edit Profile</a>
           </div>
         </div>
-        <div class="card ml-4" style="width: 15rem; height: 10rem">
-          <div class="card-body">
-        <p class="card-text"><strong>666 bokings</strong></p>
-        <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">My Bookings</a>
-          </div>
-      </div>
 
-
-
-      </div>
-
-    </div>
-    <div>
-      <!-- contains center of page -->
-
-
+      <div style="width: 100%">
       <div class="d-flex">
-      <div>
+
+        <% if @bookings.count == 0 %>
+          <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
+            <div class="card-body">
+              <h5> Next Booking</h5>
+              <p> You have no booking scheduled</p>
+              </p>
+          <p class="card-text">
+              <%= link_to 'See Goods', goods_path, class: "btn btn-outline-secondary _button-gold mb-0" %></p>
+            </div>
+          </div>
+        <% else %>
+
+        <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
+          <div class="card-body">
+            <h5>Next Booking</h5>
+            <p> <%= @next_booking.good.name %></p>
+            <p> <%= @next_booking.start_date.strftime('%A %d %B %Y') %>
+            </p>
+        <p class="card-text">
+            <%= link_to 'See Details', bookings_path, class: "btn btn-outline-secondary _button-gold mb-0" %></p>
+          </div>
+        </div>
+
+
+
+
+
+        <% end %>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
+          <div class="card-body">
+            <% if @goods.count == 0  %>
+              <p><%= @goods.count %> <br> <strong>Items for rent</strong></p>
+              <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Add new item</a>
+
+            <% elsif @goods.count == 1  %>
+              <p><%= @goods.count %> <br> <strong>Item for rent</strong></p>
+              <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Add new item</a>
+            <% else %>
+              <p><%= @goods.count %> <strong>Items for rent</strong></p>
+              <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">My Goods list</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+          <h5 class="m-4">My goods</h5>
+        <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
+
         <!-- My goods list -->
         <% @goods.each do |good| %>
-        <div class="notification">
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-          <div class="notification-content">
+        <div class="notification" >
 
-            <p><small><%= good.name  %></small></p>
-            <p><%= good.description %></p>
+          <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large" />
+          <div class="notification-content">
+            <p><small><%=link_to good.name, good_path(good)  %></small></p>
+         <!--    <p><%= good.description %></p> -->
           </div>
           <div class="notification-actions">
-            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+            <%= link_to edit_good_path(good) do %>Edit<i class="fas fa-pencil-alt"></i><% end %>
+
             <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
             <i class="far fa-trash-alt"> </i>
               <% end %>
@@ -63,27 +111,66 @@
         <% end %>
       </div>
 
-      <div>
-        <!-- My reservations -->
-        <% @bookings.each do |booking| %>
-        <div class="notification">
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-          <div class="notification-content">
 
-            <p><small><%= booking.good.name  %></small></p>
-            <p>From:<%= booking.start_date %>, to: <%= booking.end_date %> </p>
+      <% if @bookings.count == 0 %>
+
+      <h5 class="m-4">You have no bookings Scheduled</h5>
+
+      <% else %>
+
+      <h5 class="m-4"> My Bookings awaiting confirmation</h5>
+      <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
+
+        <!-- My goods list -->
+        <% @bookings.each do |booking| %>
+        <div class="notification" >
+          <% if booking.status == false %>
+            <% good = Good.find(booking.good_id)  %>
+            <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large" />
+            <div class="notification-content">
+              <p><small><%= good.name %></small></p>
+              <p><small> <%= booking.start_date.strftime('%A %d %B %Y') %></small></p>
+         <!--    <p><%= good.description %></p> -->
           </div>
+          <% end %>
           <div class="notification-actions">
-            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+
+            <% if booking.status == false %>
+                  <p>Unconfirmed <i class="fas fa-minus-circle"></i></p>
+            <% else %>
+                  <p>Confirmed!!! <i class="fas fa-check-circle"></i></p>
+            <% end %>
+
+            <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
+            <i class="far fa-trash-alt"> </i>
+            <% end %>
+            <!-- <a href="#">Delete </i></a> -->
           </div>
+        </div>
+
+        <% end %>
       </div>
       <% end %>
+
+
     </div>
+
+
+
+
+
+
+
+
+      </div>
+
     </div>
+
+      <!-- contains center of page -->
+
+
+
 
 
 </div>
-
-  </div>
 </div>

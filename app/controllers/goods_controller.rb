@@ -3,16 +3,27 @@ skip_before_action :authenticate_user!, only: [:show, :index, :root]
 before_action :find, only: [:show, :edit, :update, :destroy]
   def index
 
+
     if params[:designer].present? && params[:category].present?
       @goods = policy_scope(Good).where(designer: params[:designer], category: params[:category])
     else
       @goods = policy_scope(Good)
     end
+    
+    @goods = Good.all
+    @good = Good.new
+    @goods = policy_scope(Good)
 
+    @goods = Good.geocoded #returns flats with coordinates
 
-    # @goods = Good.all
-    # @goods = policy_scope(Good)  # .order(created_at: :desc)
-
+    @markers = @goods.map do |good|
+      {
+        lat: good.latitude,
+        lng: good.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { good: good })
+      }
+     # .order(created_at: :desc)
+   end
   end
 
   def new
@@ -60,6 +71,6 @@ before_action :find, only: [:show, :edit, :update, :destroy]
     @good = Good.find(params[:id])
   end
   def good_params
-    params.require(:good).permit(:name, :description, :category, :price, :designer, :location, :user_id, photos: [])
+    params.require(:good).permit(:name, :description, :category, :price, :designer, :address, :user_id, photos: [])
   end
 end

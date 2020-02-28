@@ -2,9 +2,10 @@
   <div class="search-form">
     <div class="search-title">
       <section>
-        <h1>Rent your luxury item</h1>
+        <h1 id="notbold">Rent your luxury item</h1>
       </section>
     </div>
+
 
 
     <%= form_tag goods_path, method: :get do %>
@@ -31,10 +32,11 @@
 
 
 
+    <%= simple_form_for (@good ) do |f|%>
+      <%= f.input :address %>
+      <%=  f.input :designer, collection: Good::DESIGNER%>
+      <%=  f.input :category, collection: Good::CATEGORY %>
 
-<!--     <%#= simple_form_for (@good ) do |f|%>
-      <%#=  f.input :designer, collection: Good::DESIGNER%>
-      <%#=  f.input :category, collection: Good::CATEGORY %>
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="location">START DATE</label>

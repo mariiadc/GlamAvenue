@@ -4,7 +4,7 @@ class Good < ApplicationRecord
 "Bottega Veneta",
 "Burberry",
 "Celine",
-"Channel",
+"Chanel",
 "Chloé",
 "Cult Gaia",
 "Dior",
@@ -29,10 +29,14 @@ class Good < ApplicationRecord
 "Handle Bags",
 "Tote Bags"
 ]
-LOCATION = ["Lisbon", "Porto"]
+
+
   has_many_attached :photos
   belongs_to :user # posts in your item
   has_many :bookings
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   # has_many :users, through :bookings
   # bookings someone's item
   # has_many :reviews, through :bookings
