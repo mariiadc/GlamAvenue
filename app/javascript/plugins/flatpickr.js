@@ -11,4 +11,3 @@ flatpickr("#start_date", {
 
 });
 
-console.log(moment().format("YYYY-MM-DD"))

@@ -1,176 +1,151 @@
 
 
 <div class="mx-5">
-  <div>
     <div>
-      <h2 class="mt-4"> Profile Page</h2>
+    <div>
+      <h3 class="mt-4", id="textprofile">My Profile</h3>
     </div>
-  </div>
+      </div>
 
-  <div class="mb-4">
-    <!-- this div contains all the body below h2 -->
-    <div>
-    <!-- sidebar -->
-      <div class="d-flex">
-        <!-- container for card of profile -->
-        <div class="card  _user-info" style="width: 23rem;">
-        <img src="https://www.historyisfun.org/wp-content/uploads/2018/09/John-Smith-picture.jpg" class="card-img-top" alt="...">
-          <div class="card-body _profile-card-body">
-            <h5>Name</h5>
-            <p class="card-text"><%= @user.first_name %> <%= @user.last_name %></p>
-            <h5>Location</h5>
-            <p class="card-text"><!-- <i class="fas fa-map-marker-alt profile-marker"></i> -->  <%= @user.address %></p>
-            <h5><strong>Contact</strong></h5>
-            <p class="card-text"><%= @user.phone_number %></p>
-            <h5><strong>Email</strong></h5>
-            <p class="card-text"><%= @user.email %></p>
-            <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Edit Profile</a>
-          </div>
-        </div>
+      <div class="mb-4">
+        <!-- this div contains all the body below h2 -->
+        <div>
+        <!-- sidebar -->
+          <div class="d-flex">
+            <!-- container for card of profile -->
+            <div class="card  _user-info" style="width: 23rem;">
+            <img src="https://www.historyisfun.org/wp-content/uploads/2018/09/John-Smith-picture.jpg" class="card-img-top" alt="">
+              <div class="card-body _profile-card-body" id="text-vertical">
+                <h6>Name</h6>
+                <p class="card-text"><%= @user.first_name %> <%= @user.last_name %></p>
+                <h6>Address</h6>
+                <p class="card-text"><!-- <i class="fas fa-map-marker-alt profile-marker"></i> -->  <%= @user.address %></p>
+                <h6>Contact</h6>
+                <p class="card-text"><%= @user.phone_number %></p>
+                <h6>Email</h6>
+                <p class="card-text"><%= @user.email %></p>
+                <br>
+                <br>
+                <p href="#" class="btn btn-outline-secondary _button-gold mx-auto" id="profilebutton">Edit Profile</p>
+              </div>
+            </div>
 
-      <div style="width: 100%">
-      <div class="d-flex">
+        <div style="width: 100%">
+          <div class="d-flex">
 
-        <% if @bookings.count == 0 %>
-          <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
-            <div class="card-body">
-              <h5> Next Booking</h5>
-              <p> You have no booking scheduled</p>
-              </p>
-          <p class="card-text">
-              <%= link_to 'See Goods', goods_path, class: "btn btn-outline-secondary _button-gold mb-0" %></p>
+            <% if @bookings.count == 0 %>
+              <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
+                <div class="card-body" id="shadow">
+                  <h5 id="textprofile"> Upcoming Order</h5>
+                  <h6 id="textprofile"> You have no orders scheduled</h6>
+              <p class="card-text">
+                  <%= link_to 'See Orders', goods_path, id:"profilebutton", class: "btn btn-outline-secondary _button-gold mb-0" %> </p>
+                </div>
+              </div>
+            <% else %>
+
+            <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
+              <div class="card-body" id="shadow">
+                <h5 id="textprofile">Upcoming Order</h5>
+                <br>
+                <h6> <%= @next_booking.good.name %></h6>
+                <h6> <%= @next_booking.start_date.strftime('%A %d %B %Y') %></h6>
+            <p class="card-text">
+                <%= link_to 'See Details', bookings_path, id:"profilebutton", class: "btn btn-outline-secondary _button-gold mb-0" %></p>
+              </div>
+            </div>
+
+            <% end %>
+
+            <div class=" ml-4 mt-2" style="width: 20rem; height: 14rem">
+              <div class="" >
+
+            <!-- <h1>Pie Chart</h1>
+               <div id="pie" style="height: 100%;"></div>
+                <script>
+                 new Chartkick.PieChart("pie", [["Blueberry",44],["Strawberry",23],["Banana",22],["Apple",21],["Grape",13]], {download: "pie"});
+                </script>
+              </div> -->
+               <!--  < % if @goods.count == 0  %>
+                  <p>< % = @goods.count %> <br> <strong>Rental Items</strong></p>
+                  <a href="#" class="btn btn-outline-secondary _button-gold mx-auto" id="profilebutton">Add new item</a>
+
+                < % elsif @goods.count == 1  %>
+                  <p>< %= @goods.count %> <br> <strong>Rental Item</strong></p>
+                  <a href="#" class="btn btn-outline-secondary _button-gold mx-auto" id="profilebutton">Add new item</a>
+                < % else %>
+                  <p>< %= @goods.count %> <strong>Rental Items</strong></p>
+                  <a href="#" class="btn btn-outline-secondary _button-gold mx-auto" id="profilebutton">My Goods list</a>
+                < % end %> -->
+              </div>
             </div>
           </div>
-        <% else %>
+              <h5 class="m-4">My Items</h5>
+            <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
+            <!-- My goods list -->
+            <% @goods.each do |good| %>
+            <div class="notification" >
 
-        <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
-          <div class="card-body">
-            <h5>Next Booking</h5>
-            <p> <%= @next_booking.good.name %></p>
-            <p> <%= @next_booking.start_date.strftime('%A %d %B %Y') %>
-            </p>
-        <p class="card-text">
-            <%= link_to 'See Details', bookings_path, class: "btn btn-outline-secondary _button-gold mb-0" %></p>
-          </div>
-        </div>
+              <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large"></img>
+              <div class="notification-content" id="shadow">
+                <h6 class="myitems"><small><%=link_to good.name, good_path(good)  %></small></h6>
+             <!--    <p><%= good.description %></p> -->
+              </div>
+              <div class="notification-actions">
+                <%= link_to edit_good_path(good) do %>Edit<i class="fas fa-pencil-alt fa-lg"></i><% end %>
 
-
-
-
-
-        <% end %>
-
-
-
-
-
-
-
-
-
-
-
-        <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
-          <div class="card-body">
-            <% if @goods.count == 0  %>
-              <p><%= @goods.count %> <br> <strong>Items for rent</strong></p>
-              <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Add new item</a>
-
-            <% elsif @goods.count == 1  %>
-              <p><%= @goods.count %> <br> <strong>Item for rent</strong></p>
-              <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">Add new item</a>
-            <% else %>
-              <p><%= @goods.count %> <strong>Items for rent</strong></p>
-              <a href="#" class="btn btn-outline-secondary _button-gold mx-auto">My Goods list</a>
+                <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
+                <i class="far fa-trash-alt fa-lg"> </i>
+                  <% end %>
+                <!-- <a href="#">Delete </i></a> -->
+              </div>
+            </div>
             <% end %>
           </div>
-        </div>
-      </div>
-          <h5 class="m-4">My goods</h5>
-        <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
 
-        <!-- My goods list -->
-        <% @goods.each do |good| %>
-        <div class="notification" >
 
-          <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large" />
-          <div class="notification-content">
-            <p><small><%=link_to good.name, good_path(good)  %></small></p>
-         <!--    <p><%= good.description %></p> -->
-          </div>
-          <div class="notification-actions">
-            <%= link_to edit_good_path(good) do %>Edit<i class="fas fa-pencil-alt"></i><% end %>
+          <% if @bookings.count == 0 %>
 
-            <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
-            <i class="far fa-trash-alt"> </i>
+          <h5 class="m-4" id="textprofile">You have No Orders Scheduled</h5>
+
+          <% else %>
+
+          <h5 class="m-4" id="textprofile"> My Orders Awaiting Confirmation</h5>
+          <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
+
+            <!-- My goods list -->
+            <% @bookings.each do |booking| %>
+            <div class="notification" >
+              <% if booking.status == false %>
+                <% good = Good.find(booking.good_id)  %>
+                <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large" />
+                <div class="notification-content">
+                  <h6><small><%= good.name %></small></h6>
+                  <h6><small> <%= booking.start_date.strftime('%A %d %B %Y') %></small></h6>
+             <!--    <p><%= good.description %></p> -->
+              </div>
               <% end %>
-            <!-- <a href="#">Delete </i></a> -->
-          </div>
-        </div>
+              <div class="notification-actions">
 
-        <% end %>
-      </div>
+                <% if booking.status == false %>
+                      <h6 id="textprofile">Unconfirmed <i class="fas fa-minus-circle fa-lg"></i></h6>
+                <% else %>
+                      <h6 id="textprofile">Confirmed! <i class="fas fa-check-circle fa-lg"></i></h6>
+                <% end %>
 
+                <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
+                <i class="far fa-trash-alt fa-lg" id="iconnotifications"> </i>
+                <% end %>
+                <!-- <a href="#">Delete </i></a> -->
+              </div>
+            </div>
 
-      <% if @bookings.count == 0 %>
-
-      <h5 class="m-4">You have no bookings Scheduled</h5>
-
-      <% else %>
-
-      <h5 class="m-4"> My Bookings awaiting confirmation</h5>
-      <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
-
-        <!-- My goods list -->
-        <% @bookings.each do |booking| %>
-        <div class="notification" >
-          <% if booking.status == false %>
-            <% good = Good.find(booking.good_id)  %>
-            <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large" />
-            <div class="notification-content">
-              <p><small><%= good.name %></small></p>
-              <p><small> <%= booking.start_date.strftime('%A %d %B %Y') %></small></p>
-         <!--    <p><%= good.description %></p> -->
+            <% end %>
           </div>
           <% end %>
-          <div class="notification-actions">
-
-            <% if booking.status == false %>
-                  <p>Unconfirmed <i class="fas fa-minus-circle"></i></p>
-            <% else %>
-                  <p>Confirmed!!! <i class="fas fa-check-circle"></i></p>
-            <% end %>
-
-            <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
-            <i class="far fa-trash-alt"> </i>
-            <% end %>
-            <!-- <a href="#">Delete </i></a> -->
-          </div>
         </div>
-
-        <% end %>
-      </div>
-      <% end %>
-
-
+     </div>
     </div>
-
-
-
-
-
-
-
-
-      </div>
-
-    </div>
-
       <!-- contains center of page -->
-
-
-
-
-
-</div>
+    </div>
 </div>

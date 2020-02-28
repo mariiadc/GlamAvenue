@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_205001) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+
     t.index ["user_id"], name: "index_goods_on_user_id"
   end
 

@@ -1,15 +1,42 @@
 <div class="search-home">
-<form>
   <div class="search-form">
     <div class="search-title">
       <section>
         <h1 id="notbold">Rent your luxury item</h1>
       </section>
     </div>
-    <%= simple_form_for (@good ) do |f|%>
-      <%= f.input :address %>
-      <%=  f.input :designer, collection: Good::DESIGNER%>
-      <%=  f.input :category, collection: Good::CATEGORY %>
+
+
+
+    <%= form_tag goods_path, method: :get do %>
+      <div class="form-row">
+      <label for="designer"> Designer</label>
+      </div>
+      <div class="form-row">
+        <div class="line">
+        <%= select_tag(:designer, options_for_select(Good::DESIGNER)) %>
+  </div>
+      </div>
+      <div class="form-row">
+        <label for="category">Category</label>
+      </div>
+      <div class="form-row">
+        <div class="line">
+        <%= select_tag(:category, options_for_select(Good::CATEGORY)) %>
+      </div>
+      </div>
+      <div class="form-row">
+        <%= submit_tag "Search", class: "btn btn-outline-secondary _button-gold col-md-12" %>
+      </div>
+    <% end %>
+
+
+<!--
+    <%#= simple_form_for (@good ) do |f|%>
+      <#%= f.input :address %>
+      <%#=  f.input :designer, collection: Good::DESIGNER%>
+      <%#=  f.input :category, collection: Good::CATEGORY %>
+
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="location">START DATE</label>
@@ -20,9 +47,9 @@
           <input type="text" class="form-control" id="start_date">
         </div>
       </div>
-  <% end %>
-      <%= link_to "Search", goods_path, class: "btn btn-outline-secondary _button-gold col-md-12" %>
+      <%  %> -->
+<!--   <#% end %> -->
+      <%#= link_to "Search", goods_path, class: "btn btn-outline-secondary _button-gold col-md-12" %>
 
   </div>
-</form>
 </div>
