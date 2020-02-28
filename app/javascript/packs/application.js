@@ -7,6 +7,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { calc } from '../plugins/booking_calculator';
 
 initMapbox();
+calc();
 
-calc()
+
+require("chartkick");
+require("chart.js");
 

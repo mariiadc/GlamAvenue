@@ -2,11 +2,18 @@ class GoodsController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :index, :root]
 before_action :find, only: [:show, :edit, :update, :destroy]
   def index
-    @goods = Good.all
-    @good = Good.new
-    @goods = policy_scope(Good)
 
-    @goods = Good.geocoded #returns flats with coordinates
+    if params[:designer].present? && params[:category].present?
+      @goods = policy_scope(Good).where(designer: params[:designer], category: params[:category])
+    else
+      @goods = policy_scope(Good)
+    end
+
+
+    @good = Good.new
+
+
+    @goods = @goods.geocoded #returns flats with coordinates
 
     @markers = @goods.map do |good|
       {
@@ -36,7 +43,7 @@ before_action :find, only: [:show, :edit, :update, :destroy]
     authorize @good
 
     if @good.save
-      redirect_to    @good, notice: 'Your item was successfully created.'
+      redirect_to    root_path, notice: 'Your item was successfully created.'
     else
       render :new
    end

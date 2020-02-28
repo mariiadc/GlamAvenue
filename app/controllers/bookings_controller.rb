@@ -10,8 +10,9 @@ class BookingsController < ApplicationController
 
   def show
     @good = @booking.good
+    authorize @good
     authorize @booking
-    authorize @good # Is it a mistake? 
+
   end
 
   def new
@@ -62,5 +63,6 @@ class BookingsController < ApplicationController
 
   def find
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 end
