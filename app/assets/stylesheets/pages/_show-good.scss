@@ -3,17 +3,20 @@
 }
 
 ._card-show {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   // border-bottom: 1px solid #D9CDBF;
   // border-top: 1px solid #D9CDBF;
   font-weight: 100;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius:16px;
   padding: 25px;
-  width: 370px;
-  height: 499px;
+  width: 500px;
+  height: 528px;
+  background-color:white;
 
+  h4 {
+    margin-top:20px;
+  }
 }
 
 #show-button {
@@ -22,7 +25,8 @@
 
 
 ._card-show img {
-  height:
+  height:250px;
+  width:300px;
 }
 
 // }
