@@ -12,13 +12,17 @@
       <label for="designer"> Designer</label>
       </div>
       <div class="form-row">
+        <div class="line">
         <%= select_tag(:designer, options_for_select(Good::DESIGNER)) %>
+  </div>
       </div>
       <div class="form-row">
         <label for="category">Category</label>
       </div>
       <div class="form-row">
+        <div class="line">
         <%= select_tag(:category, options_for_select(Good::CATEGORY)) %>
+      </div>
       </div>
       <div class="form-row">
         <%= submit_tag "Search", class: "btn btn-outline-secondary _button-gold col-md-12" %>
