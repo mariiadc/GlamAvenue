@@ -13,6 +13,9 @@
     <p>Category: <strong><%= @good.category %> </strong></p>
   </div>
   <div style="margin-top: 40px; margin-bottom: 40px;">
-    <%= link_to 'Back', root_path, class: "show-button" %>
+ <div class="row d-flex justify-content-between _bnk">
+    <%= link_to 'Back', :back, class: "btn btn-outline-secondary mr-5 pt-2" %>
+    <%= link_to 'Continue shopping', goods_path, class: "btn btn-outline-secondary _button-gold-outline ml-6" %>
+  </div>
   </div>
 </div>

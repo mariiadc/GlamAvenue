@@ -9,7 +9,7 @@
      <ul class="filters pl-4"><li><%= f %></li></ul>
   <% end %>
   </div>
-  <div class="cards   c-ind-b  col-7">
+  <div class="cards   c-ind-b overflow-auto col-7">
     <% @goods.each do |good| %>
     <div class="card  c-body">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path good.photos.first.key, crop: :fill %>')">
