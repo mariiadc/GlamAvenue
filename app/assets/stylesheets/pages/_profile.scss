@@ -28,6 +28,7 @@ border-radius: 6px;
 #profilebutton{
   position:absolute;
   bottom:10px;
+
 }
 
 
@@ -58,6 +59,9 @@ font-size: 15px;
   display: flex;
   transition: ease .3s;
 }
+#textprofile{
+font-weight: lighter;
+  }
 
 .notification:hover .notification-actions {
   opacity: 1;

@@ -3,7 +3,7 @@
 <div class="mx-5">
     <div>
     <div>
-      <h3 class="mt-4">My Profile</h3>
+      <h3 class="mt-4", id="textprofile">My Profile</h3>
     </div>
       </div>
 
@@ -36,8 +36,8 @@
             <% if @bookings.count == 0 %>
               <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
                 <div class="card-body" id="shadow">
-                  <h5> Upcoming Order</h5>
-                  <h6> You have no booking scheduled</h6>
+                  <h5 id="textprofile"> Upcoming Order</h5>
+                  <h6 id="textprofile"> You have no orders scheduled</h6>
               <p class="card-text">
                   <%= link_to 'See Orders', goods_path, id:"profilebutton", class: "btn btn-outline-secondary _button-gold mb-0" %> </p>
                 </div>
@@ -46,7 +46,7 @@
 
             <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
               <div class="card-body" id="shadow">
-                <h5>Upcoming Order</h5>
+                <h5 id="textprofile">Upcoming Order</h5>
                 <br>
                 <h6> <%= @next_booking.good.name %></h6>
                 <h6> <%= @next_booking.start_date.strftime('%A %d %B %Y') %></h6>
@@ -57,8 +57,8 @@
 
             <% end %>
 
-            <div class="card ml-4 mt-2" style="width: 20rem; height: 14rem">
-              <div class="card-body" id="shadow">
+            <div class=" ml-4 mt-2" style="width: 20rem; height: 14rem">
+              <div class="" >
 
             <!-- <h1>Pie Chart</h1>
                <div id="pie" style="height: 100%;"></div>
@@ -106,11 +106,11 @@
 
           <% if @bookings.count == 0 %>
 
-          <h5 class="m-4">You have no bookings Scheduled</h5>
+          <h5 class="m-4" id="textprofile">You have No Orders Scheduled</h5>
 
           <% else %>
 
-          <h5 class="m-4"> My Orders Awaiting Confirmation</h5>
+          <h5 class="m-4" id="textprofile"> My Orders Awaiting Confirmation</h5>
           <div class="overflow-auto ml-4" style="width: 100%; height: 10rem">
 
             <!-- My goods list -->
@@ -128,9 +128,9 @@
               <div class="notification-actions">
 
                 <% if booking.status == false %>
-                      <h6>Unconfirmed <i class="fas fa-minus-circle fa-lg"></i></h6>
+                      <h6 id="textprofile">Unconfirmed <i class="fas fa-minus-circle fa-lg"></i></h6>
                 <% else %>
-                      <h6>Confirmed! <i class="fas fa-check-circle fa-lg"></i></h6>
+                      <h6 id="textprofile">Confirmed! <i class="fas fa-check-circle fa-lg"></i></h6>
                 <% end %>
 
                 <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
