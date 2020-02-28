@@ -8,5 +8,5 @@
 // });
 
 // NAV BAR SEARCH BOX - NEED TO EDIT IN THE FUTURE https://codepen.io/sebastianpopp/pen/myYmmy
-require chartkick
-require Chart.bundle
+// require chartkick
+// require Chart.bundle
