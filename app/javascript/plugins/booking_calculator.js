@@ -24,10 +24,10 @@
       let days = Math.round((endDate - startDate)/(1000*60*60*24));
       let priceDay = document.getElementById('price').innerText.split(" ")[0];
 
-      let totalPrice = days * priceDay ;  // in js.erb you can use ruby code. use that for the price instead of querys
+      let totalPrice = days * priceDay;  // in js.erb you can use ruby code. use that for the price instead of querys
 
-      let paramaterTotal = document.getElementById('show-price')
-      let html = `<strong><p>Total price: ${totalPrice} $</p></strong>`
+      let paramaterTotal = document.getElementById('show-price');
+      let html = `<strong><p>Total price: ${totalPrice} $</p></strong>`;
 
       paramaterTotal.innerHTML = html;
 

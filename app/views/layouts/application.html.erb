@@ -12,7 +12,7 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
   <% if user_signed_in? %>
@@ -25,10 +25,8 @@
 
     <%= yield %>
     <%= render partial:'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
-
     <%= javascript_pack_tag 'application' %>
-
-
   </body>
 </html>
