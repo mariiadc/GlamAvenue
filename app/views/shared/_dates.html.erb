@@ -7,16 +7,45 @@
     <%= f.input :end_date, as: :string, required: false, input_html: { id: "end_date"} %>
     <%=f.submit 'Add Booking', class: "btn btn-outline-secondary _button-gold w-100" %>
   <% end %>
-<!-- </div> -->
-<!-- @good.booking_all
+  <div id="show-price">
 
-disable where
-          {
-            from: "2025-04-01",
-            to: "2025-05-01"
-        },
-        {
-            from: "2025-09-01",
-            to: "2025-12-01"
-        }
-    ] -->
+
+  </div>
+
+
+<script>
+
+  let endDateElement = document.querySelector('#start_date');
+
+  endDateElement.addEventListener("input", function() {
+    event.preventDefault();
+
+    // setTimeout(function(){
+
+      endDateElement = document.querySelector('#start_date').value;
+      let datesString = endDateElement.split(" to ");
+
+      let startString = datesString[0].split("-");
+      let endString = datesString[1].split("-");
+
+      let startDate = new Date(startString[0], startString[1], startString[2]);
+      let endDate = new Date(endString[0], endString[1], endString[2]);
+
+      let days = Math.round((endDate - startDate)/(1000*60*60*24));
+      let priceDay = document.getElementById('price').innerText.split(" ")[0];
+
+      let totalPrice = days * priceDay ;  // in js.erb you can use ruby code. use that for the price instead of querys
+
+      let paramaterTotal = document.querySelector('#show-price')
+      let html = `<strong><p>Total price: ${totalPrice} $</p></strong>`
+
+    paramaterTotal.insertAdjacentHTML('beforeend', html)
+
+    // }, 2000);
+
+  });
+
+
+
+</script>
+
