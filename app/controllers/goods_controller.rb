@@ -43,7 +43,7 @@ before_action :find, only: [:show, :edit, :update, :destroy]
     authorize @good
 
     if @good.save
-      redirect_to    @good, notice: 'Your item was successfully created.'
+      redirect_to    root_path, notice: 'Your item was successfully created.'
     else
       render :new
    end
