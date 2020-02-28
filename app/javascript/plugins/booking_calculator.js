@@ -1,19 +1,4 @@
-  <!-- <div class="container w-25"> -->
-  <h5 id="dates">Add dates</h5>
-  <%= simple_form_for [@good, @booking] do |f| %>
- <!--    <= f.input :url %>
-    <= f.input :name %> -->
-    <%= f.input  :start_date, as: :string, required: false, input_html: { id: "start_date"} %>
-    <%= f.input :end_date, as: :string, required: false, input_html: { id: "end_date"} %>
-    <%=f.submit 'Add Booking', class: "btn btn-outline-secondary _button-gold w-100" %>
-  <% end %>
-  <div id="show-price">
-
-
-  </div>
-
-
-<!-- <script>
+  const calc = () => {
 
   let endDateElement = document.querySelector('#start_date');
 
@@ -49,8 +34,5 @@
     // }, 2000);
 
   });
-
-
-
-</script>
- -->
+};
+export { calc };
