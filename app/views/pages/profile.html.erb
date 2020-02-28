@@ -51,7 +51,7 @@
                 <h6> <%= @next_booking.good.name %></h6>
                 <h6> <%= @next_booking.start_date.strftime('%A %d %B %Y') %></h6>
             <p class="card-text">
-                <%= link_to 'See Details', bookings_path, id:"profilebutton", class: "btn btn-outline-secondary _button-gold mb-0" %></p>
+                <%= link_to 'See Details', good_booking_path(@next_booking.good_id, @next_booking), id:"profilebutton", class: "btn btn-outline-secondary _button-gold mb-0" %></p>
               </div>
             </div>
 
@@ -120,7 +120,7 @@
                 <% good = Good.find(booking.good_id)  %>
                 <img src='<%= cl_image_path good.photos.first.key, crop: :fill %>' class="avatar-large" />
                 <div class="notification-content">
-                  <h6><small><%= good.name %></small></h6>
+                  <h6><small><%= link_to good.name, good_booking_path(@next_booking.good_id, @next_booking) %></small></h6>
                   <h6><small> <%= booking.start_date.strftime('%A %d %B %Y') %></small></h6>
              <!--    <p><%= good.description %></p> -->
               </div>
