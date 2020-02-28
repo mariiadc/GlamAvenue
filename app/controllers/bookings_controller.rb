@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     @booking.value = (@booking.end_date - @booking.start_date).to_i * @good.price.to_i
 
     if @booking.save
-      redirect_to root_path, notice: 'Your item was successfully booked.'
+      redirect_to good_booking_path(@good, @booking), notice: 'Your item was successfully booked.'
     else
       render :new
    end
@@ -53,6 +53,13 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to booking_path(@booking)
 
+  end
+
+  def destroy
+    @booking = Booking.where(user_id: current_user.id).first
+    authorize @booking
+    @booking.destroy
+    redirect_to profile_path
   end
 
   private

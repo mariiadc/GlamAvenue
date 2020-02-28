@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'index', to: 'pages#index', as: :index
   get 'profile', to: 'pages#profile', as: :profile
+  delete 'profile', to: 'bookings#destroy', as: "booking_destroy"
+
 
   resources :goods do
     resources :bookings, only: [:new, :create, :show]

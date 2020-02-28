@@ -19,7 +19,9 @@ class Good < ApplicationRecord
 "Prada",
 "Tory Burch",
 "Valentino",
-"Saint Laurent"]
+"Saint Laurent",
+"David Heinemeier Hansson"
+]
  CATEGORY = [
 "Clutches",
 "Crossbody Bags",
@@ -27,7 +29,8 @@ class Good < ApplicationRecord
 "Shopper Bags",
 "Shoulder Bags",
 "Handle Bags",
-"Tote Bags"
+"Tote Bags",
+"Backpack"
 ]
 
 
