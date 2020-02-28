@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
-
+gem 'chartkick'
 # Devise gem- User sign in and login
 gem 'devise'
 
