@@ -2,6 +2,14 @@ class GoodsController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :index, :root]
 before_action :find, only: [:show, :edit, :update, :destroy]
   def index
+
+
+    if params[:designer].present? && params[:category].present?
+      @goods = policy_scope(Good).where(designer: params[:designer], category: params[:category])
+    else
+      @goods = policy_scope(Good)
+    end
+    
     @goods = Good.all
     @good = Good.new
     @goods = policy_scope(Good)
