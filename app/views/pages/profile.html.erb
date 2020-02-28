@@ -94,9 +94,9 @@
               <div class="notification-actions">
                 <%= link_to edit_good_path(good) do %>Edit<i class="fas fa-pencil-alt fa-lg"></i><% end %>
 
-                <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
-                <i class="far fa-trash-alt fa-lg"> </i>
-                  <% end %>
+                <%= button_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
+                  <i class="far fa-trash-alt fa-lg"> </i>
+                <% end %>
                 <!-- <a href="#">Delete </i></a> -->
               </div>
             </div>
@@ -133,10 +133,9 @@
                       <h6>Confirmed! <i class="fas fa-check-circle fa-lg"></i></h6>
                 <% end %>
 
-                <%= link_to good_path(good), method: :delete, data: {confirm: "Are sure?"} do%>
-                <i class="far fa-trash-alt fa-lg" id="iconnotifications"> </i>
-                <% end %>
-                <!-- <a href="#">Delete </i></a> -->
+                  <%= button_to booking_destroy_path, method: :delete do %>
+                    <i class="far fa-trash-alt "></i>
+                  <% end %>
               </div>
             </div>
 
