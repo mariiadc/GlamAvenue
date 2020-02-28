@@ -60,5 +60,6 @@ class BookingsController < ApplicationController
 
   def find
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 end
