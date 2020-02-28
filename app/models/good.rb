@@ -4,7 +4,7 @@ class Good < ApplicationRecord
 "Bottega Veneta",
 "Burberry",
 "Celine",
-"Channel",
+"Chanel",
 "Chloé",
 "Cult Gaia",
 "Dior",
@@ -29,6 +29,7 @@ class Good < ApplicationRecord
 "Handle Bags",
 "Tote Bags"
 ]
+
 
   has_many_attached :photos
   belongs_to :user # posts in your item
