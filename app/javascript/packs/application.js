@@ -9,6 +9,7 @@ import { calc } from '../plugins/booking_calculator';
 
 initMapbox();
 
+calc();
 
 // require("chartkick");
 // require("chart.js");
